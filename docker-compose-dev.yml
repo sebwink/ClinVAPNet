@@ -14,8 +14,23 @@ services:
       - 'clinvap_example_data'
     links: 
       - 'clinvap_db:db'
+  db:
+    image: mongo
+  db_api:
+    image: clinvap_net/db
+    build:
+      context: ./db 
+      dockerfile: ./db/Dockerfile
+    environment:
+      ENV: DEV
+    depends_on:
+      - 'db'
+    links:
+      - 'db'
+    ports:
+      - '3001:5001'
   api:
-    image: deregnet_scores/clinvap_score_api
+    image: clinvap_net/api
     build: .
     environment:
       ENV: DEV

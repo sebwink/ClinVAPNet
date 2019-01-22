@@ -1,0 +1,8 @@
+{
+  "report_id": {
+    "type": "string"
+  },
+  "mskdg_run": {
+    "type": "string"
+  }
+}
