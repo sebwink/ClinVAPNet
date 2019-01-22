@@ -1,0 +1,36 @@
+{
+  "name": "clinvap_score_api",
+  "version": "1.0.0",
+  "description": "Define DeRegNet-scores from ClinVAP variant annotation pipeline reports",
+  "main": "main.js",
+  "scripts": {
+    "test": "nyc mocha"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sebwink/variant_score_api.git"
+  },
+  "keywords": [
+    "deregnet"
+  ],
+  "author": "Sebastian Winkler",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/sebwink/variant_score_api/issues"
+  },
+  "homepage": "https://github.com/sebwink/variant_score_api#readme",
+  "dependencies": {
+    "axios": "^0.18.0",
+    "express": "^4.16.4",
+    "morgan": "^1.9.1",
+    "nconf": "^0.10.0"
+  },
+  "devDependencies": {
+    "eslint": "^5.12.1",
+    "eslint-config-airbnb-base": "^13.1.0",
+    "eslint-plugin-import": "^2.14.0",
+    "mocha": "^5.2.0",
+    "nodemon": "^1.18.9",
+    "nyc": "^13.1.0"
+  }
+}

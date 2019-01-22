@@ -1,0 +1,25 @@
+version: '3'
+services:
+  clinvap_db:
+    image: mongo 
+  clinvap_example_data:
+    image: clinvap/report_db_api_example_data
+    depends_on:
+      - 'clinvap_db'
+    links:
+      - 'clinvap_db:db'
+  clinvap:
+    image: clinvap/report_db_api
+    depends_on:
+      - 'clinvap_example_data'
+    links: 
+      - 'clinvap_db:db'
+  api:
+    image: deregnet_scores/clinvap_score_api
+    build: .
+    depends_on:
+      - 'clinvap'
+    links:
+      - 'clinvap'
+    ports:
+      - '3000:3000'
